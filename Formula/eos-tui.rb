@@ -1,31 +1,31 @@
 class EosTui < Formula
   desc "Terminal UI for monitoring and managing EOS storage clusters"
   homepage "https://github.com/lobis/eos-tui"
-  version "0.0.3"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/lobis/eos-tui/releases/download/v0.0.3/eos-tui_v0.0.3_macos_arm64"
-      sha256 "578623c285149a73b300459943ca31e469e721cb4ff592b377a1e8bc29c272cd"
+      url "https://github.com/lobis/eos-tui/releases/download/v0.1.0/eos-tui_v0.1.0_macos_arm64"
+      sha256 "c013cd075a9a6f58eb28416c9f83ff5bbaf7bafa6ed627c9b0091cfbf7688ab9"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/lobis/eos-tui/releases/download/v0.0.3/eos-tui_v0.0.3_linux_amd64"
-      sha256 "ea5f4d7c315bbfe443a1487dc39a52f05aad6259cbaafee8c7bbe87e1aadabf4"
+      url "https://github.com/lobis/eos-tui/releases/download/v0.1.0/eos-tui_v0.1.0_linux_amd64"
+      sha256 "8febf43666fd70bb95eee123e0a66e0c4554b843ffa6ed8fbb9d3d8557508006"
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/lobis/eos-tui/releases/download/v0.0.3/eos-tui_v0.0.3_linux_arm64"
-        sha256 "5d901e6b9c94c6697f64ef357a202024463243fb31f6896e18d892729d4d0914"
+        url "https://github.com/lobis/eos-tui/releases/download/v0.1.0/eos-tui_v0.1.0_linux_arm64"
+        sha256 "3a6bc38c5915656c4f98f4f9fc1daaf671d389a64c84e2ac01348377d2db5bb3"
       end
     end
   end
 
   def install
-    binary = "eos-tui_v0.0.3_\#{OS.mac? ? "macos_arm64" : (Hardware::CPU.arm? ? "linux_arm64" : "linux_amd64")}"
+    binary = "eos-tui_v0.1.0_\#{OS.mac? ? "macos_arm64" : (Hardware::CPU.arm? ? "linux_arm64" : "linux_amd64")}"
     bin.install binary => "eos-tui"
   end
 
