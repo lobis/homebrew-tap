@@ -25,7 +25,7 @@ class EosTui < Formula
   end
 
   def install
-    binary = "eos-tui_v0.0.2_\#{OS.mac? ? "macos_arm64" : (Hardware::CPU.arm? ? "linux_arm64" : "linux_amd64")}"
+    binary = "eos-tui_v0.0.2_#{OS.mac? ? "macos_arm64" : (Hardware::CPU.arm? ? "linux_arm64" : "linux_amd64")}"
     bin.install binary => "eos-tui"
   end
 
