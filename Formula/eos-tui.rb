@@ -14,6 +14,6 @@ class EosTui < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/eos-tui --help")
+    assert_match "Usage:", shell_output("#{bin}/eos-tui --help 2>&1")
   end
 end
