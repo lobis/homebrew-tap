@@ -1,25 +1,25 @@
 class EosTui < Formula
   desc "Terminal UI for monitoring and managing EOS storage clusters"
   homepage "https://github.com/cern-eos/eos-tui"
-  version "0.2.8"
+  version "0.2.9"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.8/eos-tui_v0.2.8_macos_arm64"
-      sha256 "feec6a6ef20b169d0d5c2b5847316cb931162d5d90a86991b82814e6cd8aa0d3"
+      url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.9/eos-tui_v0.2.9_macos_arm64"
+      sha256 "949f00db35b52fc640c4dd8f1a02c98695f12183bf84885b2f231c56690429db"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.8/eos-tui_v0.2.8_linux_amd64"
-      sha256 "90d25661553460980720f87042232321fd56ae884adf6dbf72a2916d2bcc289d"
+      url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.9/eos-tui_v0.2.9_linux_amd64"
+      sha256 "98556ad0d78614e15c85549c56057cc18a3c10056b0b80726616a5bfbcd70341"
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.8/eos-tui_v0.2.8_linux_arm64"
-        sha256 "ec4937916d1e56596ace1cee4aaf5504f2dc11cb9ab8c1a0aedecd810c6bfd2d"
+        url "https://github.com/cern-eos/eos-tui/releases/download/v0.2.9/eos-tui_v0.2.9_linux_arm64"
+        sha256 "89b00e45f0091bc05455d5695d9b84d0bb9e00151a3b91c43134b6522b0a2fe2"
       end
     end
   end
@@ -27,11 +27,11 @@ class EosTui < Formula
   def install
     binary =
       if OS.mac?
-        "eos-tui_v0.2.8_macos_arm64"
+        "eos-tui_v0.2.9_macos_arm64"
       elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        "eos-tui_v0.2.8_linux_arm64"
+        "eos-tui_v0.2.9_linux_arm64"
       else
-        "eos-tui_v0.2.8_linux_amd64"
+        "eos-tui_v0.2.9_linux_amd64"
       end
     bin.install binary => "eos-tui"
   end
